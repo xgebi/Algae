@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    {{ token }}
     <TextEditor />
-    <ToolBox />
-    <CategoryBox />
+    <ToolsBox />
+    <CategoriesBox />
     <TagsBox />
     <SeoBox />
     <IncludesBox />
@@ -10,7 +11,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+import store from "./store";
+
 import TextEditor from "./components/TextEditor.vue";
 import ToolsBox from "./components/ToolsBox.vue";
 import CategoriesBox from "./components/CategoriesBox.vue";
@@ -18,7 +21,10 @@ import TagsBox from "./components/TagsBox.vue";
 import SeoBox from "./components/SeoBox.vue";
 import IncludesBox from "./components/IncludesBox.vue";
 
-@Component({
+export default {
+  store,
+  name: "App",
+  props: ["token"],
   components: {
     TextEditor,
     ToolsBox,
@@ -27,17 +33,8 @@ import IncludesBox from "./components/IncludesBox.vue";
     SeoBox,
     IncludesBox
   }
-})
-export default class App extends Vue {}
+};
 </script>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
 </style>

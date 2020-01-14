@@ -1,15 +1,21 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { StoreOptions } from 'vuex'
+
+import actions from './actions';
+import mutations from './mutations';
+import getters from './getters';
+import { EditorState } from './types';
+
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store: StoreOptions<EditorState> = {
   state: {
+    initialState: 1
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+  getters,
+  mutations,
+  actions
+}
+
+export default new Vuex.Store<EditorState>(store);
