@@ -1,10 +1,9 @@
 <template>
-  <div class="editor">intial is {{ initial }}</div>
+  <div class="editor"></div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 import {
   State,
   Getter,
@@ -16,8 +15,6 @@ import {
 @Component
 export default class TextEditor extends Vue {
   @Prop() private msg!: string;
-
-  @Getter("getInitialState") initial: any;
 }
 </script>
 
