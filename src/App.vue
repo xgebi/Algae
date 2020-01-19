@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    {{ token }}
-    <TextEditor />
-    <ToolsBox />
-    <CategoriesBox />
-    <TagsBox />
-    <SeoBox />
-    <IncludesBox />
+    <MainView :token="{token}" :postId="{postId}" />
   </div>
 </template>
 
@@ -14,24 +8,21 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import store from "./store";
 
-import TextEditor from "./components/TextEditor.vue";
-import ToolsBox from "./components/ToolsBox.vue";
-import CategoriesBox from "./components/CategoriesBox.vue";
-import TagsBox from "./components/TagsBox.vue";
-import SeoBox from "./components/SeoBox.vue";
-import IncludesBox from "./components/IncludesBox.vue";
+import MainView from './views/MainView.vue';
 
 export default {
   store,
   name: "App",
-  props: ["token"],
+  props: {    
+    token: {
+      type: String
+    },
+    postId: {
+      type: String
+    }
+  },
   components: {
-    TextEditor,
-    ToolsBox,
-    CategoriesBox,
-    TagsBox,
-    SeoBox,
-    IncludesBox
+    MainView
   }
 };
 </script>

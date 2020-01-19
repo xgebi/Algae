@@ -4,8 +4,8 @@
 	}
 }*/
 
-import { GetterTree } from 'vuex';
-import { EditorState } from './types';
+//import { GetterTree } from 'vuex';
+//import { EditorState } from './types';
 
 /*export const getters: GetterTree<ProfileState, RootState> = {
 	fullName(state): string {

@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { mapGetters } from "vuex";
+
 import { State, Getter, Action, Mutation, namespace } from "vuex-class";
 
 @Component

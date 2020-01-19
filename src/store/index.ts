@@ -1,21 +1,24 @@
-import Vue from 'vue'
-import Vuex, { StoreOptions } from 'vuex'
+import Vue from 'vue';
+import Vuex, { StoreOptions } from 'vuex';
+import { RootState } from './types';
+import { general } from './general'
 
-import actions from './actions';
+
+/*import actions from './actions';
 import mutations from './mutations';
 //import getters from './getters';
-import { EditorState } from './types';
-
+import { EditorState } from './types';*/
 
 Vue.use(Vuex)
 
-const store: StoreOptions<EditorState> = {
+const store: StoreOptions<any> = {
   state: {
     initialState: 1
   },
   //getters,
-  mutations,
-  actions
+  //mutations,
+  //actions
 }
 
-export default new Vuex.Store<EditorState>(store);
+export default new Vuex.Store<any>(store);
+
