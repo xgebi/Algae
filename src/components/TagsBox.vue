@@ -2,14 +2,19 @@
   <div class="editor">Hello</div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+<script lang="js">
+export default {
+  name: "tags-box",
+  components: {
 
-@Component
-export default class TagsBox extends Vue {
-  @Prop() private msg!: string;
-
-  created() {}
+  },
+  props: [
+    
+  ],
+  mounted() {},
+  async created() {
+    //let res = await this.changeUuid("a");
+  }
 }
 </script>
 

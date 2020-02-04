@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    {{ authToken }}
-    {{ token2 }}
+    {{ this.token }} {{ this.uuid }}
     <TextEditor />
     <ToolsBox />
     <CategoriesBox />
@@ -11,14 +10,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import {
-  State,
-  Getter,
-  Action,
-  Mutation
-} from 'vuex-class'
+<script lang="js">
+  import {mapActions} from 'vuex';
 
 import TextEditor from "../components/TextEditor.vue";
 import ToolsBox from "../components/ToolsBox.vue";
@@ -27,44 +20,35 @@ import TagsBox from "../components/TagsBox.vue";
 import SeoBox from "../components/SeoBox.vue";
 import IncludesBox from "../components/IncludesBox.vue";
 
-const namespace: string = 'general';
-
-@Component({
+export default {
+  name: "main-view",
   components: {
     TextEditor,
     ToolsBox,
     CategoriesBox,
     TagsBox,
     SeoBox,
-    IncludesBox,
-  }
-})
-export default class MainView extends Vue {
-  @Prop() private token!: any;
-
-  @Prop() private postId!: any;
-
-  @Getter("token") token2: any;
-
-  //@Action("")
-
+    IncludesBox
+  },
+  props: [
+    'token',
+    'uuid'
+  ],
   mounted() {
+    this.getFirstToken(this.token.token);
+    this.fetchPost(this.uuid.uuid);
+  },
+  async created() {
+
+  },
+  methods: {
+    ...mapActions({
+      getFirstToken: "auth/getFirstToken",
+      fetchPost: "fetchPost"
+    })
   }
-
-  
-  get authToken() {
-    return this.token.token;  
-  }
-
-  get postUUID() {
-    return this.postId.postId;
-  }
-
-  created() {
-
-  }
-
 }
+
 </script>
 
 <style lang="scss" scoped>

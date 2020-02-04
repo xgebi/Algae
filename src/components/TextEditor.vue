@@ -9,18 +9,28 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+<script lang="js">
+import { mapGetters } from 'vuex';
 
-import { State, Getter, Action, Mutation, namespace } from "vuex-class";
+export default {
+  name: "text-editor",
+  components: {
 
-@Component
-export default class TextEditor extends Vue {
-  @Prop() private msg!: string;
-
-  @Getter("getInitialState") initial: any;
-
-  private pikachu = 3;
+  },
+  props: [
+    
+  ],
+  mounted() {
+    
+  },
+  async created() {
+    //let res = await this.changeUuid("a");
+  },  
+  computed: {
+    ...mapGetters({
+        getPostUuid: "post/basic/getUuid"
+    })
+  }
 }
 </script>
 

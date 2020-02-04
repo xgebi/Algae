@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <MainView :token="{token}" :postId="{postId}" />
+    <MainView v-bind:token="{token}" v-bind:uuid="{uuid}" />
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+<script lang="js">
 import store from "./store";
 
 import MainView from './views/MainView.vue';
@@ -13,14 +12,10 @@ import MainView from './views/MainView.vue';
 export default {
   store,
   name: "App",
-  props: {    
-    token: {
-      type: String
-    },
-    postId: {
-      type: String
-    }
-  },
+  props: [
+    'token',
+    'uuid'
+  ],
   components: {
     MainView
   }
