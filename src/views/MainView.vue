@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    {{ this.token }} {{ this.uuid }}
+    <LanguageBox />
+    <TitleBox />
     <TextEditor />
     <ToolsBox />
     <CategoriesBox />
@@ -17,8 +18,10 @@ import TextEditor from "../components/TextEditor.vue";
 import ToolsBox from "../components/ToolsBox.vue";
 import CategoriesBox from "../components/CategoriesBox.vue";
 import TagsBox from "../components/TagsBox.vue";
+import TitleBox from "../components/TitleBox.vue";
 import SeoBox from "../components/SeoBox.vue";
 import IncludesBox from "../components/IncludesBox.vue";
+import LanguageBox from "../components/LanguageBox.vue";
 
 export default {
   name: "main-view",
@@ -28,7 +31,9 @@ export default {
     CategoriesBox,
     TagsBox,
     SeoBox,
-    IncludesBox
+    IncludesBox,
+    LanguageBox,
+    TitleBox,
   },
   props: [
     'token',
@@ -36,6 +41,7 @@ export default {
   ],
   mounted() {
     this.getFirstToken(this.token.token);
+    this.getSettings();
     this.fetchPost(this.uuid.uuid);
   },
   async created() {
@@ -44,7 +50,8 @@ export default {
   methods: {
     ...mapActions({
       getFirstToken: "auth/getFirstToken",
-      fetchPost: "fetchPost"
+      fetchPost: "fetchPost",
+      getSettings: "settings/getSettings",
     })
   }
 }

@@ -4,6 +4,7 @@ import getters from './getters';
 
 const state = {
     uuid: "1234",
+    originalUuid: "",
     title: "title",
     body: "",
     excerpt: "",

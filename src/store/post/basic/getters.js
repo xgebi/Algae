@@ -2,6 +2,9 @@ export default {
 	getUuid: (state) => {
 		return state.uuid;
 	},
+	getOriginalUuid: (state) => {
+		return state.originalUuid;
+	},
 	getTitle: (state) => {
 		return state.title;
 	},

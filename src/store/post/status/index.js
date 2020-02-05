@@ -3,10 +3,12 @@ import mutations from './mutations';
 import getters from './getters';
 
 const state = {
-    outdated: false,
+    outdated: undefined,
     status: undefined,
-    published_date: undefined,
-    updated_date: undefined,
+    publishedDate: undefined,
+    updatedDate: undefined,
+    migrated: undefined,
+    migrationApproved: undefined
 };
 
 export default {
