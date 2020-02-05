@@ -1,17 +1,17 @@
 <template>
   <div class="editor">
     <div>
-      <button>Bold</button>
-      <button>Italic</button>
-      <button>Underscore</button>
+      <div>
+        <button>Bold</button>
+        <button>Italic</button>
+        <button>Underscore</button>
+      </div>
+      <textarea v-model="body"></textarea>
     </div>
-    <textarea></textarea>
   </div>
 </template>
 
 <script lang="js">
-import { mapGetters } from 'vuex';
-
 export default {
   name: "text-editor",
   components: {
@@ -24,13 +24,25 @@ export default {
     
   },
   async created() {
-    //let res = await this.changeUuid("a");
   },  
   computed: {
-    ...mapGetters({
-        getPostUuid: "post/basic/getUuid"
-    })
-  }
+    body: {
+      get() {
+        return this.$store.getters["post/basic/getBody"]
+      },
+      set(value) {
+        this.$store.dispatch("post/basic/setBody", value)
+      }
+    },
+    excerpt: {
+      get() {
+        return this.$store.getters["post/basic/getExcerpt"]
+      },
+      set(value) {
+        this.$store.dispatch("post/basic/setExcerpt", value)
+      }
+    }
+  },
 }
 </script>
 

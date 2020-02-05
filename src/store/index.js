@@ -11,46 +11,47 @@ Vue.use(Vuex)
 
 const actions = {
   async fetchPost({ getters, dispatch }, uuid) {
-    let post = PostService.getPost(getters["auth/getToken"], uuid);
+    let post = await PostService.getPost(getters["auth/getToken"], uuid);
     if (!post.error) {
       dispatch('updateWholePost', post);
     }
   },
   async fetchDifferentLanguagePost({ getters, dispatch }, lang) {
-    let post = PostService.getDifferentLanguagePost(getters["auth/getToken"], getters["post/basic/getUuid"], lang);
+    let post = await PostService.getDifferentLanguagePost(getters["auth/getToken"], getters["post/basic/getUuid"], lang);
     if (!post.error) {
       dispatch('updateWholePost', post);
     }
   },
   updateWholePost({ commit }, post) {
     // Basic
-    commit('setUuid', post.uuid);
-    commit('setOriginalUuid', post.originalUuid);
-    commit('setTitle', post.title);
-    commit('setBody', post.body);
-    commit('setExcerpt', post.excerpt);
-    commit('setUrl', post.url);
-    commit('setPostType', post.postType);
+    commit('post/basic/setUuid', post.uuid);
+    commit('post/basic/setOriginalUuid', post.originalUuid);
+    commit('post/basic/setTitle', post.title);
+    commit('post/basic/setBody', post.body);
+    commit('post/basic/setExcerpt', post.excerpt);
+    commit('post/basic/setUrl', post.url);
+    commit('post/basic/setPostType', post.postType);
 
     // includes
-    commit('setIncludeThemeCss', post.includeThemeCss);
-    commit('setCssContent', post.cssContent);
-    commit('setJsContent', post.jsContent);
-    commit('setThumbnailType', post.thumbnailType);
-    commit('setThumbnailContent', post.thumbnailContent);
+    commit('post/includes/setIncludeThemeCss', post.includeThemeCss);
+    commit('post/includes/setCssContent', post.cssContent);
+    commit('post/includes/setJsContent', post.jsContent);
+    commit('post/includes/setThumbnailType', post.thumbnailType);
+    commit('post/includes/setThumbnailContent', post.thumbnailContent);
 
     // status
-    commit('setOutdated', post.outdated);
-    commit('setStatus', post.status);
-    commit('setPublishedDate', post.publishedDate);
-    commit('setUpdatedDate', post.updatedDate);
-    commit('setMigrated', post.migrated);
-    commit('setMigrationApproved', post.migrationApproved);
+    commit('post/status/setOutdated', post.outdated);
+    commit('post/status/setStatus', post.status);
+    commit('post/status/setPublishedDate', post.publishedDate);
+    commit('post/status/setUpdatedDate', post.updatedDate);
+    commit('post/status/setMigrated', post.migrated);
+    commit('post/status/setMigrationApproved', post.migrationApproved);
 
     // taxonomy
-    commit('setTags', post.tags);
-    commit('setCategories', post.categories);
-    commit('setSeoKeywords', post.seoKeywords);
+    commit('post/taxonomy/setTags', post.tags);
+    commit('post/taxonomy/setCategories', post.categories);
+    commit('post/taxonomy/setSeoKeywords', post.seoKeywords);
+
   },
   savePost({ getters, dispatch }) {
     const post = PostService.savePost(getters["auth/getToken"], {

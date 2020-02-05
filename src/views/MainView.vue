@@ -39,10 +39,10 @@ export default {
     'token',
     'uuid'
   ],
-  mounted() {
-    this.getFirstToken(this.token.token);
-    this.getSettings();
-    this.fetchPost(this.uuid.uuid);
+  async mounted() {
+    await this.getFirstToken(this.token.token);
+    await this.getSettings();
+    await this.fetchPost(this.uuid.uuid);
   },
   async created() {
 

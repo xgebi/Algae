@@ -11,7 +11,7 @@ const PostService = {
 			redirect: 'follow', // manual, *follow, error
 			referrerPolicy: 'no-referrer', // no-referrer, *client
 		});
-		return await response.json();
+		return response.json();
 	},
 
 	async savePost(token, post) {
@@ -27,7 +27,7 @@ const PostService = {
 			referrerPolicy: 'no-referrer', // no-referrer, *client
 			body: JSON.stringify(post)
 		});
-		return await response.json();
+		return response.json();
 	},
 
 	async getDifferentLanguagePost(token, postUuid, language) {
@@ -42,7 +42,7 @@ const PostService = {
 			redirect: 'follow', // manual, *follow, error
 			referrerPolicy: 'no-referrer', // no-referrer, *client
 		});
-		return await response.json();
+		return response.json();
 	},
 };
 
