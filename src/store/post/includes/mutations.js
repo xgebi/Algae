@@ -1,6 +1,6 @@
 export default {
-	setIncludeThemeCss(state, includeThemeCss) {
-		state.includeThemeCss = includeThemeCss;
+	setRemoveThemeCss(state, removeThemeCss) {
+		state.removeThemeCss = removeThemeCss;
 	},
 	setCssContent(state, cssContent) {
 		state.cssContent = cssContent;

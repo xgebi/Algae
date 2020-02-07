@@ -40,9 +40,10 @@ export default {
     'uuid'
   ],
   async mounted() {
-    await this.getFirstToken(this.token.token);
+    console.log(this.token, this.uuid);
+    await this.getFirstToken(this.token);
     await this.getSettings();
-    await this.fetchPost(this.uuid.uuid);
+    await this.fetchPost(this.uuid);
   },
   async created() {
 
@@ -58,5 +59,14 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.box {
+  border: 1px solid hsl(0, 0%, 50%);
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0.5rem;
+
+  textarea {
+    width: 100%;
+  }
+}
 </style>

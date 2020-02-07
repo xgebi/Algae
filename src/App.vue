@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MainView v-bind:token="{token}" v-bind:uuid="{uuid}" />
+    <MainView v-bind:token="token" v-bind:uuid="uuid" />
   </div>
 </template>
 

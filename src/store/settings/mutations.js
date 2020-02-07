@@ -4,5 +4,11 @@ export default {
 	},
 	setPostTypes: (state, postTypes) => {
 		state.postTypes = postTypes;
+	},
+	setThumbnailTypes: (state, thumbnailTypes) => {
+		state.thumbnailTypes = thumbnailTypes;
+	},
+	setCategories: (state, categories) => {
+		state.categories = categories;
 	}
 }

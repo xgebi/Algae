@@ -1,7 +1,11 @@
 export default {
-	getInitialToken({ commit }) { // look what's goinging into action
-		commit('setInitialToken', "123456")
-	}
+	updateTags({ commit }, tags) {
+		commit('setTags', tags);
+	},
+	updateCategories({ commit }, categories) {
+		commit('setCategories', categories);
+	},
+	updateSeoKeywords({ commit }, keywords) {
+		commit('setSeoKeywords', keywords);
+	},
 }
-
-// { state, commit, dispatch, rootState }

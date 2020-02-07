@@ -5,4 +5,10 @@ export default {
 	getPostTypes: (state) => {
 		return state.postTypes;
 	},
+	getThumbnailTypes: (state) => {
+		return state.thumbnailTypes;
+	},
+	getCategories: (state) => {
+		return state.categories;
+	},
 }

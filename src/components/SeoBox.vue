@@ -1,5 +1,8 @@
 <template>
-  <div class="editor">Hello</div>
+  <div class="seo-box box">
+    <label for="keywords">SEO keywords</label>
+    <textarea v-model="keywords"></textarea>
+  </div>
 </template>
 
 <script lang="js">
@@ -14,24 +17,20 @@ export default {
   mounted() {},
   async created() {
     //let res = await this.changeUuid("a");
-  }
+  },
+  computed: {
+    keywords: {
+      get() {
+        return this.$store.getters["post/taxonomoy/getSeoKeywords"]
+      },
+      set(value) {
+        this.$store.dispatch("post/taxonomoy/updateSeoKeywords", value)
+      }
+    },
+  },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
 </style>

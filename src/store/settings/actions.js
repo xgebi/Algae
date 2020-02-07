@@ -6,6 +6,8 @@ export default {
 		if (!settings.error) {
 			commit('setPostTypes', settings.postTypes);
 			commit('setLanguages', settings.languages);
+			commit('setThumbnailTypes', settings.thumbnailTypes);
+			commit('setCategories', settings.categories);
 		}
 	}
 }

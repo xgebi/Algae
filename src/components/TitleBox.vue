@@ -1,5 +1,5 @@
 <template>
-  <div class="title-box">
+  <div class="title-box box">
     <div>
       <label for="title">Title</label>
       <input id="title" v-model="title" type="text" />
@@ -21,22 +21,22 @@ export default {
     
   ],
   computed: {
-	title: {
-		get() {
-			return this.$store.getters["post/basic/getTitle"]
-		},
-		set(value) {
-			this.$store.dispatch("post/basic/setTitle", value)
-		}
-	},
-	url: {
-		get() {
-			return this.$store.getters["post/basic/getUrl"]
-		},
-		set(value) {
-			this.$store.dispatch("post/basic/setUrl", value)
-		}
-	}
+    title: {
+      get() {
+        return this.$store.getters["post/basic/getTitle"]
+      },
+      set(value) {
+        this.$store.dispatch("post/basic/setTitle", value)
+      }
+    },
+    url: {
+      get() {
+        return this.$store.getters["post/basic/getUrl"]
+      },
+      set(value) {
+        this.$store.dispatch("post/basic/setUrl", value)
+      }
+    }
   },
   mounted() {},
   async created() {
@@ -46,19 +46,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
 </style>

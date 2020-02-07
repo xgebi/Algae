@@ -33,7 +33,7 @@ const actions = {
     commit('post/basic/setPostType', post.postType);
 
     // includes
-    commit('post/includes/setIncludeThemeCss', post.includeThemeCss);
+    commit('post/includes/setRemoveThemeCss', post.removeThemeCss);
     commit('post/includes/setCssContent', post.cssContent);
     commit('post/includes/setJsContent', post.jsContent);
     commit('post/includes/setThumbnailType', post.thumbnailType);
@@ -48,6 +48,7 @@ const actions = {
     commit('post/status/setMigrationApproved', post.migrationApproved);
 
     // taxonomy
+    debugger;
     commit('post/taxonomy/setTags', post.tags);
     commit('post/taxonomy/setCategories', post.categories);
     commit('post/taxonomy/setSeoKeywords', post.seoKeywords);
@@ -63,7 +64,7 @@ const actions = {
       "url": getters["post/basic/getUrl"],
       "postType": getters["post/basic/getPostType"],
 
-      "includeThemeCss": getters["post/includes/getIncludeThemeCss"],
+      "removeThemeCss": getters["post/includes/getRemoveThemeCss"],
       "cssContent": getters["post/includes/getCssContent"],
       "jsContent": getters["post/includes/getJsContent"],
       "thumbnailType": getters["post/includes/getThumbnailType"],

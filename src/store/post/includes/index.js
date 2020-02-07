@@ -3,11 +3,11 @@ import mutations from './mutations';
 import getters from './getters';
 
 const state = {
-    includeThemeCss: true,
-    cssContent: "",
-    jsContent: "",
-    thumbnailType: "",
-    thumbnailContent: ""
+    removeThemeCss: undefined,
+    cssContent: undefined,
+    jsContent: undefined,
+    thumbnailType: undefined,
+    thumbnailContent: undefined,
 };
 
 export default {

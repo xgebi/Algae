@@ -1,6 +1,6 @@
 export default {
-	getIncludeThemeCss: (state) => {
-		return state.includeThemeCss;
+	getRemoveThemeCss: (state) => {
+		return state.removeThemeCss;
 	},
 	getCssContent: (state) => {
 		return state.cssContent;

@@ -4,8 +4,10 @@ import getters from './getters';
 
 
 export const state = {
-	blogLanguages: [],
-	postTypes: []
+	blogLanguages: undefined,
+	postTypes: undefined,
+	thumbnailTypes: undefined,
+	categories: undefined,
 };
 
 export default {
