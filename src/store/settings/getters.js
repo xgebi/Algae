@@ -11,4 +11,7 @@ export default {
 	getCategories: (state) => {
 		return state.categories;
 	},
+	getPostStatuses: (state) => {
+		return state.postStatuses;
+	}
 }

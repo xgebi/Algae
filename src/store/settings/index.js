@@ -8,6 +8,7 @@ export const state = {
 	postTypes: undefined,
 	thumbnailTypes: undefined,
 	categories: undefined,
+	postStatuses: undefined,
 };
 
 export default {

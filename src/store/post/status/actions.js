@@ -1,5 +1,20 @@
 export default {
-	getInitialToken({ commit }) { // look what's goinging into action
-		commit('setInitialToken', "123456")
-	}
+	updateOutdated({ commit }, outdatedness) {
+		commit('setOutdated', outdatedness);
+	},
+	updatePublishedDate({ commit }, publishedDate) {
+		commit('setPublishedDate', publishedDate);
+	},
+	updateUpdatedDate({ commit }, updatedDate) {
+		commit('setUpdatedDate', updatedDate);
+	},
+	updateMigrated({ commit }, migrated) {
+		commit('setMigrated', migrated);
+	},
+	updateMigrationApproved({ commit }, migrationApproved) {
+		commit('setMigrationApproved', migrationApproved);
+	},
+	updateStatus({ commit }, status) {
+		commit('setStatus', status);
+	},
 }

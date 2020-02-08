@@ -1,7 +1,4 @@
 export default {
-	getInitialToken({ commit }) { // look what's goinging into action
-		commit('setInitialToken', "123456")
-	},
 	updateRemoveThemeCss({ commit }, removeThemeCss) {
 		commit('setRemoveThemeCss', removeThemeCss);
 	},

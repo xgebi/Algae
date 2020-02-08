@@ -10,5 +10,8 @@ export default {
 	},
 	setCategories: (state, categories) => {
 		state.categories = categories;
+	},
+	setPostStatuses: (state, postStatuses) => {
+		state.postStatuses = postStatuses;
 	}
 }

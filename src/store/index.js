@@ -48,7 +48,6 @@ const actions = {
     commit('post/status/setMigrationApproved', post.migrationApproved);
 
     // taxonomy
-    debugger;
     commit('post/taxonomy/setTags', post.tags);
     commit('post/taxonomy/setCategories', post.categories);
     commit('post/taxonomy/setSeoKeywords', post.seoKeywords);
@@ -82,6 +81,69 @@ const actions = {
       "seoKeywords": getters["post/taxonomoy/getSeoKeywords"],
     });
     dispatch('updateWholePost', post);
+  },
+  publishPost({ getters, dispatch }) {
+    const post = PostService.savePost(getters["auth/getToken"], {
+      "uuid": getters["post/basic/getUuid"],
+      "originalUuid": getters["post/basic/originalUuid"],
+      "title": getters["post/basic/getTitle"],
+      "body": getters["post/basic/getBody"],
+      "excerpt": getters["post/basic/getExcerpt"],
+      "url": getters["post/basic/getUrl"],
+      "postType": getters["post/basic/getPostType"],
+
+      "removeThemeCss": getters["post/includes/getRemoveThemeCss"],
+      "cssContent": getters["post/includes/getCssContent"],
+      "jsContent": getters["post/includes/getJsContent"],
+      "thumbnailType": getters["post/includes/getThumbnailType"],
+      "thumbnailContent": getters["post/includes/getThumbnailContent"],
+
+      "outdated": getters["post/status/getOutdated"],
+      "status": getters["post/status/getStatus"],
+      "publishedDate": getters["post/status/getPublishedDate"],
+      "updatedDate": getters["post/status/getUpdatedDate"],
+      "migrated": getters["post/status/getMigrated"],
+      "migrationApproved": getters["post/status/getMigrationApproved"],
+
+      "tags": getters["post/taxonomoy/getTags"],
+      "categories": getters["post/taxonomoy/getCategories"],
+      "seoKeywords": getters["post/taxonomoy/getSeoKeywords"],
+
+      publish: true
+    });
+    dispatch('updateWholePost', post);
+  },
+  deletePost({ getters, dispatch }) {
+    const result = PostService.deletePost(getters["auth/getToken"], { uuid: getters["post/basic/getUuid"], softDelete: true });
+    if (result && result["delete"] === 1) {
+      dispatch('updateWholePost', {
+        "uuid": undefined,
+        "originalUuid": getters["post/basic/originalUuid"],
+        "title": undefined,
+        "body": undefined,
+        "excerpt": undefined,
+        "url": undefined,
+        "postType": undefined,
+
+        "removeThemeCss": undefined,
+        "cssContent": undefined,
+        "jsContent": undefined,
+        "thumbnailType": undefined,
+        "thumbnailContent": undefined,
+
+        "outdated": undefined,
+        "status": undefined,
+        "publishedDate": undefined,
+        "updatedDate": undefined,
+        "migrated": undefined,
+        "migrationApproved": undefined,
+
+        "tags": undefined,
+        "categories": undefined,
+        "seoKeywords": undefined,
+      }
+      );
+    }
   }
 }
 

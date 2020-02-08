@@ -27,8 +27,8 @@ Cauliflower cheese halloumi cheddar.When the cheese comes out everybody's happy 
 		thumbnailType: "code",
 		outdated: false,
 		status: "draft",
-		published_date: Date.now() - 1000000,
-		updated_date: Date.now() - 10000,
+		publishedDate: Date.now() - 1000000,
+		updatedDate: Date.now() - 10000,
 		tags: [{ name: "tag_1", displayName: "Tag 1" }],
 		categories: { "category-1": true },
 		seoKeywords: ["Tag 1", "Category 1"],
@@ -68,7 +68,8 @@ app.get('/api/settings', (req, res) => {
 		languages: ["en", "de"],
 		postTypes: ["post"],
 		thumbnailTypes: ["image", "code"],
-		categories: [{ displayName: "Category 1", slug: "category-1", children: [{ displayName: "Category 2", slug: "category-2" }] }]
+		categories: [{ displayName: "Category 1", slug: "category-1", children: [{ displayName: "Category 2", slug: "category-2" }] }],
+		postStatuses: [{ name: "draft", displayName: "Draft" }, { name: "published", displayName: "Published" }]
 	});
 });
 
