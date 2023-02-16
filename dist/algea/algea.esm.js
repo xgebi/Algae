@@ -1,2 +1,0 @@
-import{p as t,b as o}from"./p-649f8248.js";export{s as setNonce}from"./p-649f8248.js";const n=()=>{const o=import.meta.url;const s={};if(o!==""){s.resourcesUrl=new URL(".",o).href}return t(s)};n().then((t=>o([["p-db91798c",[[1,"al-button",{variant:[1]}]]]],t)));
-//# sourceMappingURL=algea.esm.js.map

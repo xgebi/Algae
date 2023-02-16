@@ -1,2 +1,0 @@
-import{r,h as t,H as o}from"./p-649f8248.js";var a;(function(r){r["light"]="light";r["default"]="default"})(a||(a={}));const s=":host{display:block}button{background:var(--primary);color:var(--white);padding:1rem 1.5rem;border:0}button.light{background:var(--secondary);color:var(--black)}";const l=class{constructor(t){r(this,t);this.variant=a.default}render(){return t(o,null,t("button",{class:{light:this.variant===a.light}},t("slot",null)))}};l.style=s;export{l as al_button};
-//# sourceMappingURL=p-db91798c.entry.js.map
