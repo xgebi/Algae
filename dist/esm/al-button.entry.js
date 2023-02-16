@@ -1,4 +1,4 @@
-import { r as registerInstance, h, e as Host } from './index-17c21851.js';
+import { r as registerInstance, h, H as Host } from './index-4aaadd77.js';
 
 var ButtonVariant;
 (function (ButtonVariant) {
